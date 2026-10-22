@@ -206,10 +206,10 @@ formulario.addEventListener("submit", (evento) => {
 
   if (totalSim > totalNao) {
     mensagem.textContent =
-      "Você marcou mais SIM 22! Será que seus amigos pensam como você? Compare as respostas!";
+      "Você marcou mais SIM 22! Que pena voce precisa urgente repensar suas opiniões,mas ainda da tempo pense e reflita e vamos de de LULA 13 ";
   } else if (totalNao > totalSim) {
     mensagem.textContent =
-      "Você marcou mais NÃO 13! Veja como suas opiniões se comparam às dos seus amigos!";
+      "Você marcou mais NÃO 13! Veja Você é consciente e Claro vai de LULA 13 para Presidente.";
   } else {
     mensagem.textContent =
       "Suas respostas ficaram divididas igualmente!";
