@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesquisa de Opinião</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="cabecalho">
+      <span class="etiqueta">QUIZ ENTRE AMIGOS</span>
+      <h1>Pesquisa de Opinião</h1>
+      <p>
+        Responda às perguntas e descubra o
+        resultado das suas escolhas.
+      </p>
+      <small>
+        Questionário informal de humor político.
+        Não é uma pesquisa eleitoral científica.
+      </small>
+    </header>
+
+    <section id="pesquisa">
+      <div class="progresso-area">
+        <div class="progresso-texto">
+          <strong>Seu progresso</strong>
+          <span id="contador">0 de 19 respondidas</span>
+        </div>
+        <div
+          id="barraProgresso"
+          class="barra"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="19"
+          aria-valuenow="0"
+        >
+          <div id="preenchimento"></div>
+        </div>
+      </div>
+
+      <form id="formPesquisa" novalidate>
+        <div id="listaPerguntas"></div>
+
+        <p id="aviso" class="aviso" role="alert"></p>
+
+        <button type="submit" class="botao">
+          VER MEU RESULTADO
+        </button>
+      </form>
+    </section>
+
+    <section id="resultado" class="resultado oculto"
+             aria-live="polite">
+      <div class="icone-resultado">🇧🇷</div>
+      <h2>Resultado da Pesquisa</h2>
+      <p>Você concluiu todas as perguntas!</p>
+
+      <div class="placar">
+        <div class="placar-item">
+          <span>SIM 22</span>
+          <strong id="totalSim">0</strong>
+        </div>
+        <div class="placar-item">
+          <span>NÃO 13</span>
+          <strong id="totalNao">0</strong>
+        </div>
+      </div>
+
+      <div id="mensagemFinal" class="mensagem-final"></div>
+
+      <h3>Resumo das suas respostas</h3>
+      <div id="resumoRespostas"></div>
+
+      <button id="refazer" type="button" class="botao">
+        REFAZER PESQUISA
+      </button>
+    </section>
+
+    <footer>
+      Pesquisa informal • Respeite opiniões diferentes
+    </footer>
+  </main>
+</body>
+</html>
