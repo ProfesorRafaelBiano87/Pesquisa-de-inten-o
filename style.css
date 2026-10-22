@@ -1,0 +1,275 @@
+
+:root {
+  --verde: #087b42;
+  --verde-escuro: #07552f;
+  --amarelo: #ffda44;
+  --azul: #174ea6;
+  --fundo: #f1f5f3;
+  --texto: #172b22;
+  --borda: #dce7df;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+}
+
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 22px 16px;
+}
+
+.cabecalho {
+  background: linear-gradient(
+    135deg, var(--verde), var(--verde-escuro)
+  );
+  color: white;
+  text-align: center;
+  padding: 36px 24px;
+  border-radius: 18px;
+  margin-bottom: 24px;
+}
+
+.cabecalho h1 {
+  font-size: 32px;
+  margin: 15px 0;
+}
+
+.cabecalho p {
+  line-height: 1.6;
+}
+
+.cabecalho small {
+  opacity: 0.85;
+}
+
+.etiqueta {
+  display: inline-block;
+  background: var(--amarelo);
+  color: #173d27;
+  padding: 8px 15px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.progresso-area,
+.pergunta,
+.resultado {
+  background: white;
+  border-radius: 15px;
+  padding: 23px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.progresso-texto {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.barra {
+  width: 100%;
+  height: 13px;
+  background: #e4ebe7;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+#preenchimento {
+  width: 0%;
+  height: 100%;
+  background: var(--verde);
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+
+.numero {
+  display: inline-block;
+  color: var(--verde);
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.pergunta h3 {
+  margin: 0 0 20px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.opcoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.opcao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px;
+  border: 2px solid var(--borda);
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.opcao:hover {
+  border-color: var(--verde);
+  background: #f0faf3;
+}
+
+.opcao:has(input:checked) {
+  border-color: var(--verde);
+  background: #e0f4e7;
+}
+
+.opcao input {
+  accent-color: var(--verde);
+  width: 18px;
+  height: 18px;
+}
+
+.pergunta.incompleta {
+  border: 2px solid #c93636;
+}
+
+.botao {
+  display: block;
+  width: 100%;
+  background: var(--verde);
+  color: white;
+  border: 0;
+  border-radius: 12px;
+  padding: 19px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.botao:hover {
+  background: var(--verde-escuro);
+}
+
+.botao:focus-visible,
+.opcao:focus-within {
+  outline: 3px solid var(--amarelo);
+  outline-offset: 3px;
+}
+
+.aviso {
+  color: #b42318;
+  text-align: center;
+  font-weight: bold;
+}
+
+.aviso:empty {
+  display: none;
+}
+
+.oculto {
+  display: none;
+}
+
+.resultado {
+  text-align: center;
+  padding: 30px 22px;
+}
+
+.icone-resultado {
+  font-size: 55px;
+}
+
+.resultado h2 {
+  color: var(--verde);
+  font-size: 28px;
+}
+
+.placar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.placar-item {
+  background: #f1f5f3;
+  padding: 22px;
+  border-radius: 12px;
+}
+
+.placar-item span {
+  display: block;
+  font-weight: bold;
+}
+
+.placar-item strong {
+  display: block;
+  font-size: 42px;
+  margin-top: 10px;
+}
+
+.mensagem-final {
+  background: #f0f7f2;
+  border: 2px solid var(--verde);
+  padding: 22px;
+  border-radius: 14px;
+  font-size: 19px;
+  font-weight: bold;
+  line-height: 1.5;
+  margin: 25px 0;
+}
+
+#resumoRespostas {
+  text-align: left;
+  margin: 20px 0 28px;
+}
+
+.resposta-resumo {
+  border-bottom: 1px solid var(--borda);
+  padding: 12px 0;
+  line-height: 1.5;
+}
+
+.resposta-resumo strong {
+  color: var(--verde);
+}
+
+footer {
+  text-align: center;
+  color: #66756c;
+  font-size: 13px;
+  padding: 20px;
+}
+
+@media (max-width: 480px) {
+  .cabecalho h1 {
+    font-size: 26px;
+  }
+
+  .pergunta {
+    padding: 18px;
+  }
+
+  .opcoes {
+    grid-template-columns: 1fr;
+  }
+
+  .progresso-texto {
+    font-size: 12px;
+  }
+}
